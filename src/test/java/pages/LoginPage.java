@@ -19,6 +19,8 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "(//span[contains(text(),'Manufacturing')])[1]")
+    public WebElement manufacturingModule;
 
 
 }

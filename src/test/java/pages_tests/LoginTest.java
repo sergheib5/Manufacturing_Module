@@ -30,6 +30,7 @@ public class LoginTest {
         loginPage.username.sendKeys(Config.getProperty("userLogin"));
         loginPage.password.sendKeys(Config.getProperty("userPassword"));
         loginPage.loginBtn.click();
+       System.out.println();
 
     }
 

@@ -20,6 +20,7 @@ public class LoginTest {
         loginPage.username.sendKeys(Config.getProperty("managerLogin"));
         loginPage.password.sendKeys(Config.getProperty("managerPassword"));
         loginPage.loginBtn.click();
+        loginPage.manufacturingModule.click();
 
     }
 
@@ -29,6 +30,7 @@ public class LoginTest {
         loginPage.username.sendKeys(Config.getProperty("userLogin"));
         loginPage.password.sendKeys(Config.getProperty("userPassword"));
         loginPage.loginBtn.click();
+       System.out.println();
 
     }
 

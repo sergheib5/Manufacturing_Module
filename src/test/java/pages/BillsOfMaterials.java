@@ -6,4 +6,7 @@ public class BillsOfMaterials {
         System.out.println("Trying");
     }
     //hi
+    public void serghei(){
+        System.out.println("Hello");
+    }
 }

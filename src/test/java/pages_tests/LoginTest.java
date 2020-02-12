@@ -24,5 +24,14 @@ public class LoginTest {
 
     }
 
+   @Test
+    public void loginUser(){
+        LoginPage loginPage = new LoginPage();
+        loginPage.username.sendKeys(Config.getProperty("userLogin"));
+        loginPage.password.sendKeys(Config.getProperty("userPassword"));
+        loginPage.loginBtn.click();
+
+    }
+
 
 }

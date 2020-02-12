@@ -22,5 +22,4 @@ public class LoginPage {
     @FindBy(xpath = "(//span[contains(text(),'Manufacturing')])[1]")
     public WebElement manufacturingModule;
 
-
 }

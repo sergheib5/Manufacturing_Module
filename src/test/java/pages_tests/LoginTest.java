@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class LoginTest {
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
         Driver.getDriver().get("http://app.briteerp.com/web/login");
     }
@@ -16,6 +16,7 @@ public class LoginTest {
 
     @Test
     public void loginManager(){
+        Driver.getDriver().get("http://app.briteerp.com/web/login");
         LoginPage loginPage = new LoginPage();
         loginPage.username.sendKeys(Config.getProperty("managerLogin"));
         loginPage.password.sendKeys(Config.getProperty("managerPassword"));
@@ -26,6 +27,7 @@ public class LoginTest {
 
    @Test
     public void loginUser(){
+       Driver.getDriver().get("http://app.briteerp.com/web/login");
         LoginPage loginPage = new LoginPage();
         loginPage.username.sendKeys(Config.getProperty("userLogin"));
         loginPage.password.sendKeys(Config.getProperty("userPassword"));

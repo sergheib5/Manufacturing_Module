@@ -22,4 +22,9 @@ public class LoginPage {
     @FindBy(xpath = "(//span[contains(text(),'Manufacturing')])[1]")
     public WebElement manufacturingModule;
 
+
+
+    @FindBy(xpath = "//span[contains(text(),'Manufacturing')]")
+    public WebElement managerManufacturingModule;
+
 }

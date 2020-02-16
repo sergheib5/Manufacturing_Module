@@ -14,8 +14,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BillsOfMaterialUlku.ValidetingTheSearchBox;
 import pages.MainPageKenje.MainPageKenje;
-import sun.awt.windows.WEmbeddedFrame;
-
 import java.security.Key;
 import java.util.List;
 

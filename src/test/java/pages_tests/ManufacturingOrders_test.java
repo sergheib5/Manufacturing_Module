@@ -1,13 +1,16 @@
 package pages_tests;
+
 import Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ManufacturingOrders;
+
 import java.util.List;
 
 public class ManufacturingOrders_test {
@@ -20,8 +23,8 @@ public class ManufacturingOrders_test {
 
     @Test
     public void createNewOrder() throws InterruptedException {
-        ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
 
+        ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
         manufacturingOrders.createButton.click();
 
         Assert.assertTrue(manufacturingOrders.productDropdwon.isEnabled(), "Product button is not Enable ");
@@ -57,9 +60,16 @@ public class ManufacturingOrders_test {
 
         Assert.assertTrue(manufacturingOrders.actionButton.isEnabled(), "Action button is not Enable ");
         Assert.assertTrue(manufacturingOrders.printButton.isEnabled(), "Print button is not Enable ");
+        manufacturingOrders.actionButton.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
 
+        manufacturingOrders.deleteButton.click();
+        manufacturingOrders.okayButtinForDelete.click();
+
+        String expected = "Cannot delete a manufacturing order not in cancel state";
+        Assert.assertTrue(expected.equalsIgnoreCase(manufacturingOrders.actualResult.getText()));
+
+        manufacturingOrders.finishButton.click();
 
     }
-
-
 }

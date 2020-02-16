@@ -23,7 +23,8 @@ public class MainPageKenje {
     @FindBy(xpath = "//a[@data-action-id='600']")
     public WebElement billsOfMaterials;
 
-
+    @FindBy(xpath = "//span[contains(text(),'Bills of Materials')]")
+    public WebElement managerbillsOfMaterials;
 
 
 }

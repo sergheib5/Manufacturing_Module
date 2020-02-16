@@ -49,6 +49,9 @@ public class BillsOfMaterials_test_Ulku {
         main.billsOfMaterials.click();
         search.searchBoxOfBillsOfMaterial.sendKeys("iphone"+ Keys.ENTER);
 
+        SeleniumUtil.pause(3);
+       // search.searchBoxOfBillsOfMaterial.sendKeys("iphone"+ Keys.ENTER);
+
         String expectedResult="iphone";
         SeleniumUtil.pause(5);
         List<WebElement> l= search.getAllresults();

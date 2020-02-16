@@ -40,7 +40,7 @@ public class BillsOfMaterials_test_Berfu {
 
         //Click on Bills of Materials button
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
-//        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
+        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
 
         //Verify Create button is displayed and enabled
         Assert.assertTrue(BillsOfMaterialsHomePage.CreateButton.isDisplayed() && BillsOfMaterialsHomePage.CreateButton.isEnabled());

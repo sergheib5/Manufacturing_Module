@@ -24,7 +24,6 @@ public class MainPageKenje {
     public WebElement billsOfMaterials;
 
 
-    @FindBy(xpath = "//span[contains(text(),'Bills of Materials')]")
-    public WebElement managerbillsOfMaterials;
+
 
 }

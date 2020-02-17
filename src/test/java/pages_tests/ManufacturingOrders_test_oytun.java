@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.BillsofMaterialsBerfu.BillsOfMaterialsHomePage;
 import pages.LoginPage;
 import pages.ManufacturingOrders;
 
@@ -23,7 +24,7 @@ public class ManufacturingOrders_test_oytun {
     }
 
     @Test
-    public void createNewOrder() throws InterruptedException {
+    public void manufactureCreateOrder() throws InterruptedException {
 
         ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
         manufacturingOrders.createButton.click();
@@ -55,9 +56,10 @@ public class ManufacturingOrders_test_oytun {
         ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
 
         List<WebElement> checkbox = Driver.getDriver().findElements(By.xpath("//td[@class='o_list_record_selector']//input[@type='checkbox']"));
-        System.out.println(checkbox.get(1));
+       // System.out.println(checkbox.get(1));
+        //manufacturingOrders.getAllCheckBoxes().get(3).click();
         Thread.sleep(5000);
-        checkbox.get(0).click();
+        checkbox.get(1).click();
 
         Assert.assertTrue(manufacturingOrders.actionButton.isEnabled(), "Action button is not Enable ");
         Assert.assertTrue(manufacturingOrders.printButton.isEnabled(), "Print button is not Enable ");

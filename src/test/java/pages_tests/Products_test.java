@@ -1,6 +1,7 @@
 package pages_tests;
 
 import Utilities.Driver;
+import Utilities.SeleniumUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +40,9 @@ public class Products_test {
     @Test (priority = 1)
     public void createProduct(){
         main.products.click();
+        SeleniumUtil.pause(3);
         String actualText =products.productsTitle.getText();
+        SeleniumUtil.pause(3);
         String expectedText="Products";
 
 

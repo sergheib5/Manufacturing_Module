@@ -17,8 +17,9 @@
             <class name = "pages_tests.LoginTest" />
             <class name="pages_tests.ManufacturingOrders_test_oytun" />
             <class name="pages_tests.ManufacturingOrders_testRaghdah" />
-            <class name="pages_tests.Products_test" />
             <class name="pages_tests.SergheiTest" />
+            <class name="pages_tests.Products_test" />
+
             <class name="pages_tests.UnbuildOrders_test" />
         </classes>
     </test>

@@ -1,6 +1,7 @@
 package pages_tests;
 
 import Utilities.Driver;
+import Utilities.SeleniumUtil;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,16 +48,29 @@ public class ManufacturingOrders_testRaghdah {
 
        // Assert.assertTrue();
 
-
-
-
     }
-     @Test
-    public void importValidation()throws  Exception{
-        Thread.sleep(1000);
-        manufacturingOrders.importButton.click();
 
-     }
+    @Test
+    public void importValidation(){
+        SeleniumUtil.pause(1);
+        Assert.assertTrue(manufacturingOrders.importButton.isDisplayed(), "its not displayed");
+        wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.importButton)).click();
+        Assert.assertTrue(manufacturingOrders.loadFileButton.isEnabled());
+        wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.loadFileButton)).click();
+        Assert.assertTrue(manufacturingOrders.cancelLoadFileButton.isEnabled());
+        manufacturingOrders.cancelLoadFileButton.click();
     }
+
+    @Test
+    public void checkBoxValidation() {
+        wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.referenceCheckBox));
+        SeleniumUtil.pause(3);
+        manufacturingOrders.referenceCheckBox.click();
+        SeleniumUtil.pause(3);
+        manufacturingOrders.referenceCheckBox.click();
+    }
+}
+
+
 
 

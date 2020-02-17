@@ -13,8 +13,8 @@
 
         <classes>
             <class name = "pages_tests.BillsOfMaterials_test_Berfu" />
-            <class name = "pages_tests.BillsOfMaterials_test_Ulku" />
-            <class name = "pages_tests.LoginTest" />
+<!--            <class name = "pages_tests.BillsOfMaterials_test_Ulku" />-->
+<!--           <class name = "pages_tests.LoginTest" />-->
         </classes>
     </test>
 </suite>

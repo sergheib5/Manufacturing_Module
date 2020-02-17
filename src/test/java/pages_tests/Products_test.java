@@ -1,10 +1,14 @@
 package pages_tests;
 
 import Utilities.Driver;
+import Utilities.SeleniumUtil;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.MainPageKenje.MainPageKenje;
@@ -26,7 +30,7 @@ public class Products_test {
     }
 
 
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void checkTitle(){
         main.products.click();
         String actualText =products.productsTitle.getText();
@@ -36,7 +40,7 @@ public class Products_test {
         Assert.assertEquals(actualText,expectedText,"title is different");
     }
 
-    @Test (priority = 1)
+    @Test (priority = 0)
     public void createProduct(){
         main.products.click();
         String actualText =products.productsTitle.getText();
@@ -44,24 +48,26 @@ public class Products_test {
 
 
         Assert.assertEquals(actualText,expectedText,"title is different");
-//        Assert.assertTrue(Driver.getDriver().getTitle().contains("Products"),"It is not on Product page");
         Assert.assertTrue(create_button_page.createButton.isDisplayed(),"Create button is not displayed");
         create_button_page.createButton.click();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),20);
+        wait.until(ExpectedConditions.titleIs("New - Odoo"));
+
         Assert.assertTrue(new_page_save.can_be_sold.isSelected(),"Is not selected");
         Assert.assertTrue(new_page_save.can_be_purchased.isSelected(),"Is not selected");
         Select select = new Select(new_page_save.dropdownProductype);
         Assert.assertEquals(select.getFirstSelectedOption().getText(),"Stockable Product","is not selected");
-        //   Assert.assertEquals(new_page_save.dropdownCategory.getText(),"All","is not selected"); couldn't do catefory all!!!!!
-
-        new_page_save.inputText.sendKeys("parfum777");
+        //Most challenging part!!!!
+        Actions actions= new Actions(Driver.getDriver());
+        actions.moveToElement(new_page_save.dropdownCategory).perform();
+        actions.click().perform();
+        SeleniumUtil.pause(2);
+        Assert.assertEquals(new_page_save.firstOneDropdownCategory.getText(),"All","Dismatch");
         new_page_save.saveButton.click();
         new_page_save.products.click();
-        new_products_page.search.sendKeys("parfum777");
-        new_products_page.searchclaicksign.click();
-//
-//        Actions actions = new Actions(Driver.getDriver());
-//        actions.clickAndHold(new_products_page.searchclaicksign).perform();
-//        //coulkdn't pause
+        new_products_page.search.sendKeys("parfum777"+ Keys.ENTER);
+
     }
 
 
@@ -82,14 +88,28 @@ public class Products_test {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
         wait.until(ExpectedConditions.titleIs("Book - Odoo"));
         Assert.assertEquals(Driver.getDriver().getTitle(),"Book - Odoo","Title dismatch");
+        Thread.sleep(3000);
+        editButtonPage.clickEdit.click();
+        new_page_save.inputText.clear();
+        new_page_save.inputText.sendKeys("Book2");
+        new_page_save.saveButton.click();
+        SeleniumUtil.pause(3);
+        System.out.println(Driver.getDriver().getTitle());
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Book2 - Odoo","Title dismatch");
+
+        //just to reenter again Book
+        editButtonPage.clickEdit.click();
+        new_page_save.inputText.clear();
+        new_page_save.inputText.sendKeys("Book");
+        new_page_save.saveButton.click();
 
     }
 
 
-//    @AfterClass
-//    public void closetab() {
-//        Driver.quitDriver();
-//    }
+    @AfterClass
+    public void closetab() {
+        Driver.quitDriver();
+    }
 
 
 

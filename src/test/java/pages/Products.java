@@ -14,4 +14,7 @@ public class Products {
     @FindBy(xpath = "//button[contains(text(),'Import')]")
     public WebElement importBtn;
 
+    @FindBy(xpath = "//div[.='Loading...']")
+    public WebElement loadImportSign;
+
 }

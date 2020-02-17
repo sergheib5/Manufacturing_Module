@@ -37,6 +37,5 @@ public class LoginTest {
         loginPage.loginBtn.click();
         SeleniumUtil.pause(4);
         loginPage.usermanufacturingModule.click();
-        System.out.println();
     }
 }

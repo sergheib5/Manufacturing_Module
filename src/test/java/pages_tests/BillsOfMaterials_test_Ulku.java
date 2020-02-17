@@ -14,7 +14,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BillsOfMaterialUlku.ValidetingTheSearchBox;
 import pages.MainPageKenje.MainPageKenje;
-
 import java.security.Key;
 import java.util.List;
 
@@ -48,11 +47,18 @@ public class BillsOfMaterials_test_Ulku {
     @Test(priority = 2)
     public void sendValidKeys(){
         main.billsOfMaterials.click();
+        SeleniumUtil.pause(3);
         search.searchBoxOfBillsOfMaterial.sendKeys("iphone"+ Keys.ENTER);
+        SeleniumUtil.pause(3);
+//        search.searchBoxOfBillsOfMaterial.sendKeys("iphone"+ Keys.ENTER);
+
+        SeleniumUtil.pause(3);
+       // search.searchBoxOfBillsOfMaterial.sendKeys("iphone"+ Keys.ENTER);
 
         String expectedResult="iphone";
         SeleniumUtil.pause(5);
         List<WebElement> l= search.getAllresults();
+
         for(WebElement each: l){
             Assert.assertTrue(each.getText().contains(expectedResult));
         }

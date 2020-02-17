@@ -14,5 +14,11 @@ public class EditButtonPage {
 
         public WebElement createButton;
 
+
+        @FindBy(xpath = "//button[@accesskey='a']")
+
+        public WebElement clickEdit;
+
+
     }
 

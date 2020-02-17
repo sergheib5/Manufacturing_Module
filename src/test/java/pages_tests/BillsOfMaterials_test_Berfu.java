@@ -85,6 +85,7 @@ public class BillsOfMaterials_test_Berfu {
         //Go to Website as Manager and click Manufacturing module
        // login.loginManager();
         //Click on Bills of Materials button
+        SeleniumUtil.pause(3);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
         wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
 

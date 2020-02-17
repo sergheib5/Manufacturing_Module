@@ -1,11 +1,13 @@
 package pages;
 
 import Utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import javax.xml.xpath.XPath;
+import java.util.List;
 
 public class ManufacturingOrders {
 
@@ -67,5 +69,10 @@ public  WebElement actualResult;
 
 @FindBy (xpath = "//button[@class='btn btn-sm btn-primary']")
 public WebElement finishButton;
+
+
+    public List<WebElement> getAllCheckBoxes(){
+        return Driver.getDriver().findElements(By.xpath("//td[@class='o_list_record_selector']//input[@type='checkbox']"));
+    }
 
 }

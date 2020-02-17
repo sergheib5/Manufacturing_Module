@@ -27,21 +27,21 @@ public class ManufacturingOrders_testRaghdah {
     }
 
     @Test(priority = 4)
-    public void click() throws InterruptedException {
+    public void createButtonValidation() throws InterruptedException {
         SeleniumUtil.pause(3);
         wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.createButton)).click();
         Assert.assertTrue(manufacturingOrders.createButton.isDisplayed(), "its not displayed");
         // wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.importButton)).click();
-        manufacturingOrders.productBox.click();
-        manufacturingOrders.firstProductSelection.click();
-        manufacturingOrders.saveButton.click();
+        // manufacturingOrders.productBox.click();
+        // manufacturingOrders.firstProductSelection.click();
+        // manufacturingOrders.saveButton.click();
         //  wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.firstProductSelection)).click();
-        manufacturingOrders.firstProductSelection.sendKeys("Book");
+        manufacturingOrders.productBox.sendKeys("Book");
         // wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.firstProductSelection)).click();
-        manufacturingOrders.firstProductSelection.sendKeys(Keys.ARROW_DOWN);
+        manufacturingOrders.productBox.sendKeys(Keys.ARROW_DOWN);
         Thread.sleep(5000);
         // wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.firstProductSelection)).click();
-        manufacturingOrders.firstProductSelection.sendKeys(Keys.ENTER);
+        manufacturingOrders.productBox.sendKeys(Keys.ENTER);
         Thread.sleep(1000);
         manufacturingOrders.saveButton.click();
         Thread.sleep(3000);

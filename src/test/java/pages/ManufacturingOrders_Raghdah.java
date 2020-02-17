@@ -20,11 +20,11 @@ public class ManufacturingOrders_Raghdah {
     public WebElement discardButton;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div[1]/div[1]/button[8]")
     public WebElement cancelButton;
-    @FindBy(xpath = "//*[@id='o_field_input_274']")
+    @FindBy(xpath = "//input[@class='o_input ui-autocomplete-input']")
     public WebElement productBox;
     @FindBy(xpath = "//*[@id='o_field_input_274']")
     public WebElement firstProductSelection;
-    @FindBy(xpath ="//*[@id=\"modal_302\"]/div/div/div[1]/button")
+    @FindBy(xpath ="//span[.='Ok']")
     public  WebElement xButton;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/form/div[1]/div[2]/div/span[1]/label")
     public WebElement loadFileButton;

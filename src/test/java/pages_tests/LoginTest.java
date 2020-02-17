@@ -36,6 +36,5 @@ public class LoginTest {
         loginPage.password.sendKeys(Config.getProperty("userPassword"));
         loginPage.loginBtn.click();
         loginPage.usermanufacturingModule.click();
-        System.out.println();
     }
 }

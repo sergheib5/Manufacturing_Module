@@ -86,7 +86,7 @@ public class BillsOfMaterials_test_Berfu {
        // login.loginManager();
         //Click on Bills of Materials button
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
-//        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
+        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
 
         //Verify Import button is displayed and enabled
         SeleniumUtil.pause(3);
@@ -133,7 +133,7 @@ public class BillsOfMaterials_test_Berfu {
         //login.loginManager();
         //Click on Bills of Materials button
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
-//        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
+        wait.until(ExpectedConditions.visibilityOf(main.managerbillsOfMaterials)).click();
 
         //Verify check box buttons are Enable
         List<WebElement> list= BillsOfMaterialsHomePage.getAllCheckBoxes();

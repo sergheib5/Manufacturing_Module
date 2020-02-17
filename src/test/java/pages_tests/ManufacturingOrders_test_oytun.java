@@ -1,6 +1,7 @@
 package pages_tests;
 
 import Utilities.Driver;
+import Utilities.SeleniumUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import pages.ManufacturingOrders;
 
 import java.util.List;
 
-public class ManufacturingOrders_test {
+public class ManufacturingOrders_test_oytun {
 
     @BeforeClass
     public void login() {

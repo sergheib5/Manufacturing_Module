@@ -15,7 +15,7 @@ public class ProductImportFilePage {
     @FindBy(xpath = "//div[@class='col-sm-12']")
     public WebElement formatText;
 
-    @FindBy(xpath = "//*[.='Cancel']")
+    @FindBy(xpath = "(//button[@type='button'])[8]")
     public WebElement cancelBtn;
 
 

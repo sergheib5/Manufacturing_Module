@@ -19,8 +19,7 @@
             <class name="pages_tests.ManufacturingOrders_testRaghdah" />
             <class name="pages_tests.SergheiTest" />
             <class name="pages_tests.Products_test" />
-
-            <class name="pages_tests.UnbuildOrders_test" />
+            <class name="pages_tests.UnbuildOrders_test_Ivan" />
         </classes>
     </test>
 </suite>

@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ import pages.reportsSerghei.ProductImportFilePage;
 import pages.reportsSerghei.Reporting;
 import pages.reportsSerghei.UserProductPage;
 
-public class SergheiTest {
+public class SergheiTest extends BaseClass {
 
     LoginTest loginTest = new LoginTest();
     MainPageKenje mainPageKenje = new MainPageKenje();
@@ -31,6 +32,7 @@ public class SergheiTest {
 
     @Test
     public void reportValidate() {
+        Driver.logger = Driver.extent.startTest("report Validate Report");
         //validating report page look and buttons visibility
         mainPageKenje.reportManufOrders.click();
         SeleniumUtil.pause(3);
@@ -51,6 +53,7 @@ public class SergheiTest {
 
     @Test
     public void reportImgValidation() {
+        Driver.logger = Driver.extent.startTest("Report Img Validation Report");
         //verifying bar chart type imagine displayed
         mainPageKenje.reportManufOrders.click();
 
@@ -77,7 +80,7 @@ public class SergheiTest {
 
     @Test
     public void productsImportBtn() {
-
+        Driver.logger = Driver.extent.startTest("products Import Report");
         loginTest.loginPage.managermanufacturingModule.click();
         SeleniumUtil.pause(5);
         mainPageKenje.products.click();

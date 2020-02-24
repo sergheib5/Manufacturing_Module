@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.WebElement;
@@ -18,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class BillsOfMaterials_test_Berfu {
+public class BillsOfMaterials_test_Berfu extends BaseClass {
 
     LoginTest login = new LoginTest();
     MainPageKenje main=new MainPageKenje();
@@ -37,6 +38,8 @@ public class BillsOfMaterials_test_Berfu {
     public void CreateBillsOfMaterials(){
         //Go to Website as Manager and click Manufacturing module
         //login.loginManager();
+
+        Driver.logger = Driver.extent.startTest("Create Bills of Materials Report");
 
         //Click on Bills of Materials button
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
@@ -82,6 +85,7 @@ public class BillsOfMaterials_test_Berfu {
 
     @Test
     public void Importfile(){
+        Driver.logger = Driver.extent.startTest("import File report");
         //Go to Website as Manager and click Manufacturing module
        // login.loginManager();
         //Click on Bills of Materials button
@@ -130,6 +134,7 @@ public class BillsOfMaterials_test_Berfu {
 
     @Test
     public void DeleteMaterial(){
+        Driver.logger = Driver.extent.startTest("Delete Material Report");
         //Go to Website as Manager and click Manufacturing module
         //login.loginManager();
         //Click on Bills of Materials button

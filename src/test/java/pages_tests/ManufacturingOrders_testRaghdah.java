@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.Keys;
@@ -12,7 +13,7 @@ import pages.LoginPage;
 import pages.MainPageKenje.MainPageKenje;
 import pages.ManufacturingOrders_Raghdah;
 
-public class ManufacturingOrders_testRaghdah {
+public class ManufacturingOrders_testRaghdah extends BaseClass {
 
     LoginTest loginTest = new LoginTest();
     MainPageKenje mainPageKenje = new MainPageKenje();
@@ -28,6 +29,8 @@ public class ManufacturingOrders_testRaghdah {
 
     @Test(priority = 4)
     public void createButtonValidation() throws InterruptedException {
+
+        Driver.logger = Driver.extent.startTest("Create Button Validation");
         SeleniumUtil.pause(3);
         wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.createButton)).click();
         Assert.assertTrue(manufacturingOrders.createButton.isDisplayed(), "its not displayed");
@@ -53,6 +56,7 @@ public class ManufacturingOrders_testRaghdah {
 
     @Test(priority = 1)
     public void importValidation() {
+        Driver.logger = Driver.extent.startTest("Import Button Report");
         SeleniumUtil.pause(5);
         loginPage.usermanufacturingModule.click();
         loginPage.usermanufacturingModule.click();
@@ -70,6 +74,7 @@ public class ManufacturingOrders_testRaghdah {
 
     @Test(priority = 2)
     public void checkBoxValidation() {
+        Driver.logger = Driver.extent.startTest("Check Box Validation");
         loginPage.usermanufacturingModule.click();
         wait.until(ExpectedConditions.elementToBeClickable(manufacturingOrders.referenceCheckBox));
         SeleniumUtil.pause(3);

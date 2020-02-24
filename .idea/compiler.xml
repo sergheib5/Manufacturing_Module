@@ -9,6 +9,7 @@
         <module name="Manufactuting_module" />
         <module name="Manufacturing_Module" />
         <module name="Manufacturing_Module1" />
+        <module name="Manufacturing_Module2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

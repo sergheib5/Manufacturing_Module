@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.Keys;
@@ -15,7 +16,7 @@ import pages.MainPageKenje.MainPageKenje;
 import pages.ProductsMakmal.*;
 import pages_tests.LoginTest;
 
-public class Products_test {
+public class Products_test  extends BaseClass {
     LoginTest login1 = new LoginTest();
     MainPageKenje main=new MainPageKenje();
     Products products=new Products();
@@ -32,6 +33,7 @@ public class Products_test {
 
     @Test(priority = 1)
     public void checkTitle(){
+        Driver.logger = Driver.extent.startTest("Check Title Report");
         main.products.click();
         String actualText =products.productsTitle.getText();
         String expectedText="Products";
@@ -42,6 +44,7 @@ public class Products_test {
 
     @Test (priority = 0)
     public void createProduct(){
+        Driver.logger = Driver.extent.startTest("Create Product Report");
         main.products.click();
         String actualText =products.productsTitle.getText();
         String expectedText="Products";
@@ -74,13 +77,14 @@ public class Products_test {
 
     @Test (priority = 2)
     public void editButton() throws InterruptedException{
+        Driver.logger = Driver.extent.startTest("Edit Button Report");
         main.products.click();
         String actualText =products.productsTitle.getText();
         String expectedText="Products";
 
 
         Assert.assertEquals(actualText,expectedText,"title is different");
-        System.out.println(new_products_page.productanyitem.getText());
+//        System.out.println(new_products_page.productanyitem.getText());
         Thread.sleep(5000);
 //        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
 //        wait.until(ExpectedConditions.elementToBeClickable(new_products_page.productanyitem));
@@ -106,10 +110,7 @@ public class Products_test {
     }
 
 
-    @AfterClass
-    public void closetab() {
-        Driver.quitDriver();
-    }
+
 
 
 

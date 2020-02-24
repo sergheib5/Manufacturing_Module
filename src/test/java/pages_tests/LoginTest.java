@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Config;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
@@ -12,13 +13,15 @@ import pages.LoginPage;
 
 public class LoginTest {
 
-    @BeforeMethod
-    public void setUp(){
-        Driver.getDriver().get("http://app.briteerp.com/web/login");
-    }
+//    @BeforeMethod
+//    public void setUp(){
+//        Driver.getDriver().get("http://app.briteerp.com/web/login");
+//    }
+
     LoginPage loginPage = new LoginPage();
     @Test
     public void loginManager(){
+
         Driver.getDriver().get("http://app.briteerp.com/web/login");
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.username)).sendKeys(Config.getProperty("managerLogin"));
@@ -30,6 +33,7 @@ public class LoginTest {
     }
     @Test
     public void loginUser(){
+       // Driver.logger = Driver.extent.startTest("Login User ");
         Driver.getDriver().get("http://app.briteerp.com/web/login");
         LoginPage loginPage = new LoginPage();
         loginPage.username.sendKeys(Config.getProperty("userLogin"));

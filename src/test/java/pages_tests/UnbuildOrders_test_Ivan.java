@@ -1,9 +1,14 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.UnbuildOrdersIVAN.UONewPage;
@@ -11,7 +16,7 @@ import pages.UnbuildOrdersIVAN.UOPage;
 
 import java.util.Random;
 
-public class UnbuildOrders_test_Ivan {
+public class UnbuildOrders_test_Ivan extends BaseClass {
     LoginTest login = new LoginTest();
     UOPage manufactPage = new UOPage();
     UOPage unbuildOrdersPage = new UOPage();
@@ -28,6 +33,8 @@ public class UnbuildOrders_test_Ivan {
         login.loginManager();
         manufactPage.ManufacturPage.click();
         unbuildOrdersPage.UnbuildOrdersPage.click();
+        SeleniumUtil.pause(3);
+
     }
     //@Test
     public void saveWithEmptyFields(){
@@ -52,11 +59,13 @@ public class UnbuildOrders_test_Ivan {
         boolean actualResult = Driver.getDriver().findElement(By.xpath("//div[@class='modal-content']")).isDisplayed();
         Assert.assertTrue(actualResult,"Odo Server Error is DISPLAYED");
     }
-    @Test
+    @Test(priority = 1)
     public void saveWithAnyQuantity(){
+        Driver.logger = Driver.extent.startTest("saveWith any Quantity Report");
         SeleniumUtil.pause(2);
         createButton.CreateButton.click();
         SeleniumUtil.pause(2);
+//        createButton.CreateButton.click();
         productField.ProductField.click();
         Random random = new Random();
         int numOfDropDown = random.nextInt(4)+1;
@@ -95,9 +104,12 @@ public class UnbuildOrders_test_Ivan {
         boolean actualResult = Driver.getDriver().findElement(By.xpath("//h4[@class='modal-title']")).isDisplayed();
         Assert.assertTrue(actualResult,"Warning is DISPLAYED");
     }
-    @Test
+    @Test(priority = 3)
     public void discardWithAnyQuantity(){
+        Driver.logger = Driver.extent.startTest("discard with Any Quantity");
         SeleniumUtil.pause(2);
+//        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), 30);
+//        wait.until(ExpectedConditions.elementToBeClickable(createButton.CreateButton)).click();
         createButton.CreateButton.click();
         SeleniumUtil.pause(2);
         productField.ProductField.click();
@@ -139,11 +151,13 @@ public class UnbuildOrders_test_Ivan {
         boolean actualResult = Driver.getDriver().findElement(By.xpath("//div[@class='modal-content']")).isDisplayed();
         Assert.assertTrue(actualResult,"Odo Server Error is DISPLAYED");
     }
-    @Test
+    @Test (priority = 2)
     public void unbuildWithQuantity(){
+        Driver.logger = Driver.extent.startTest("unbuild with Quantity Report");
         SeleniumUtil.pause(2);
         createButton.CreateButton.click();
         SeleniumUtil.pause(2);
+       // createButton.CreateButton.click();
         productField.ProductField.click();
         Random random = new Random();
         int numOfDropDown = random.nextInt(4)+1;

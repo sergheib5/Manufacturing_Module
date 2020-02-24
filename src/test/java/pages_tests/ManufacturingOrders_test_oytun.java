@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ import pages.ManufacturingOrders;
 
 import java.util.List;
 
-public class ManufacturingOrders_test_oytun {
+public class ManufacturingOrders_test_oytun extends BaseClass {
 
     @BeforeClass
     public void login() {
@@ -25,7 +26,7 @@ public class ManufacturingOrders_test_oytun {
 
     @Test
     public void manufactureCreateOrder() throws InterruptedException {
-
+        Driver.logger = Driver.extent.startTest("Manufacture Create Order");
         ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
         manufacturingOrders.createButton.click();
 
@@ -52,6 +53,7 @@ public class ManufacturingOrders_test_oytun {
 
     @Test
     public void delete() throws InterruptedException {
+        Driver.logger = Driver.extent.startTest("Delete");
 
         ManufacturingOrders manufacturingOrders = new ManufacturingOrders();
 

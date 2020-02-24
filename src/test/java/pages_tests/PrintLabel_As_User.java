@@ -1,5 +1,6 @@
 package pages_tests;
 
+import Utilities.BaseClass;
 import Utilities.Driver;
 import Utilities.SeleniumUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ import pages.reportsSerghei.ProductImportFilePage;
 import pages.reportsSerghei.Reporting;
 import pages.reportsSerghei.UserProductPage;
 
-public class PrintLabel_As_User {
+public class PrintLabel_As_User extends BaseClass {
 
     LoginTest loginTest = new LoginTest();
     MainPageKenje mainPageKenje = new MainPageKenje();
@@ -29,6 +30,7 @@ public class PrintLabel_As_User {
 
    @Test
     public void printLabel() {
+       Driver.logger = Driver.extent.startTest("Print Label Report");
        SeleniumUtil.pause(3);
        mainPageKenje.products.click();
        //click on the first products
